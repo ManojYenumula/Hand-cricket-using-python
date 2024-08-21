@@ -51,6 +51,66 @@ def user_bowling():
       print("\n\n:)----------COMPUTER IS OUT----------:)")
       print("\ncomputer scored runs in ball:",runs)
       return total_runs
+      
+      
+     
+ #if user batting in second innings
+ 
+def user_batting2():
+    runs = 0
+    ball = 1
+    total_runs = 0
+    while runs != ball:
+        while True:
+            runs = input("\nScore runs between 1 to 6: ")
+            if runs not in ("1", "2", "3", "4", "5", "6"):
+                print("\nInvalid runs. Please enter a number between 1 and 6.")
+            else:
+                break
+        runs = int(runs)
+        ball = random.randint(1, 6)
+        if ball != runs:
+            total_runs += runs
+            print("\nComputer ball:", ball)
+            print("\nYour score is:", total_runs)
+            if total_runs >com_runs:
+                return total_runs
+                break
+        else:
+            print("\nYou are out")
+            print("\nComputer ball:", ball)
+            return total_runs
+ 
+ 
+ #if user bowling in second innings
+ 
+def user_bowling2():
+ ball=1
+ runs=0
+ total_runs=0
+ while ball!=runs:
+   while True:
+       ball=input("\n guess computer runs in next ball:")
+       if ball not in("1","2","3","4","5","6"):
+           print("\ninvalid guess.plz enter guess between  1 to 6")
+       else:
+           break
+           
+   ball=int(ball)       
+   runs=random.randint(1,6)
+   if ball!=runs:
+    total_runs +=runs
+    print("\ncomputer scored runs in ball:",runs)
+    print("\ncomputer scored total runs:",total_runs)
+    if total_runs>user_runs:
+    	return total_runs
+    	break
+   else:
+     print("\ncomputer is out")
+     print("\nucomputer scored runs in ball:",runs)
+     return total_runs
+ 
+ 
      
 #it taken input from user odd or even for toss
 
@@ -113,7 +173,7 @@ if toss==result:
   user_runs=user_batting()
   print("\n\nFINAL RUNS YOU SCORED:",user_runs)
   print("\n\nNow computer is batting")
-  com_runs=user_bowling()
+  com_runs=user_bowling2()
   print("\n\nFINAL RUNS COMPUTER SCPRED:",com_runs)
   if com_runs>user_runs:
    print("\n\n************COMPUTER WON THE MATCH************")
@@ -131,7 +191,7 @@ if toss==result:
   com_runs=user_bowling()
   print("\n\nFINAL RUNS COMPUTER SCORED:",com_runs)
   print("\n\nNow you are batting")
-  user_runs=user_batting()
+  user_runs=user_batting2()
   print("\n\nFINAL RUNS you SCORED:",user_runs)
   if com_runs>user_runs:
    print("\n\n************COMPUTER WON THE MATCH************")
@@ -155,7 +215,7 @@ else:
   com_runs=user_bowling()
   print("\n\nFINAL RUNS COMPUTER SCORED:",com_runs)
   print("\n\nNow you are batting")
-  user_runs=user_batting()
+  user_runs=user_batting2()
   print("\n\nFINAL RUNS you SCORED:",user_runs)
   if com_runs>user_runs:
    print("\n\n************COMPUTER WON THE MATCH************")
@@ -172,7 +232,7 @@ else:
   user_runs=user_batting()
   print("\n\nFINAL RUNS YOU SCORED:",user_runs)
   print("\n\nNow computer is batting")
-  com_runs=user_bowling()
+  com_runs=user_bowling2()
   print("\n\nFINAL RUNS COMPUTER SCPRED:",com_runs)
   if com_runs>user_runs:
    print("\n\n************COMPUTER WON THE MATCH************")
